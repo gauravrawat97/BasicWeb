@@ -1,6 +1,11 @@
-{% extends 'personal/home.html' %}
-
+{% extends 'personal/base.html' %}
+{% include 'personal/nav.html' %}
 {% block content %}
-<p>Hey its <h1> Ginger from another page </h1> </p>
+<div class="container">
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</div>
 {% include 'personal/includes/second.html' %}
 {% endblock %}
