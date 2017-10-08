@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog',
+    'pictures',
     'personal',
     'webapp',
     'django.contrib.admin',
@@ -119,5 +120,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+import os
 STATIC_URL = '/static/'
+PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
+
+MEDIA_ROOT = PROJECT_ROOT + '/static/pictures/pics/'
+MEDIA_URL = '/media/'

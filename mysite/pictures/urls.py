@@ -13,15 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import  include, url
-from django.contrib import admin
-from django.conf.urls.static import static
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^webapp/', include('webapp.urls')),
-    url(r'', include('personal.urls')),
-    url(r'^blog/', include('blog.urls')),
-    url(r'^pics/', include('pictures.urls')),
+from django.conf.urls import url,include
+from django.views.generic import ListView,DetailView
+from pictures.models import picture
 
 
-]
+urlpatterns = [url(r'^$',ListView.as_view(queryset=picture.objects.all().order_by("-date")[:25],template_name ="pictures/pic.html")),
+               url(r'^(?P<pk>\d+)$',DetailView.as_view(model = picture,template_name="pictures/posting.html"))]

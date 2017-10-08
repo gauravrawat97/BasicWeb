@@ -1,0 +1,10 @@
+{% extends 'personal/base.html' %}
+
+{% block content %}
+{% include 'personal/nav.html' %}
+{% load staticfiles %}
+<center><h1>{{post.title}}</h1>
+<b>on {{post.date|date:"d-m-Y"}}</b>
+<font  color="red" size="20"><img src="{% static "pictures/pics/0.jpg" %}"/></font>
+</center>
+{% endblock %}

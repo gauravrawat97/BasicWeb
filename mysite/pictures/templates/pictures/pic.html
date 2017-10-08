@@ -1,0 +1,23 @@
+{% extends 'personal/base.html' %}
+{% block content %}
+{% include 'personal/nav.html' %}
+<table class="table">
+<tr>
+    <td>Title</td>
+    <td>Link</td>
+    <td>Date</td>
+</tr>
+{% for post in object_list %}
+
+      <tr class =danger>
+
+        <td>{{post.title}}</td>
+        <td><a href ="/pics/{{post.id}}"> Link </a></td>
+        <td>{{post.date|date:"d-m-Y"}}</td>
+      </tr>
+
+
+
+{% endfor %}
+</table>
+{% endblock %}
