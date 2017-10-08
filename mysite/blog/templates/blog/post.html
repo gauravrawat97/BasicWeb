@@ -1,0 +1,9 @@
+{% extends 'personal/base.html' %}
+
+{% block content %}
+{% include 'personal/nav.html' %}
+<center><h1>{{post.title}}</h1>
+<b>on {{post.date|date:"d-m-Y"}}</b>
+<font  color="red" size="20">{{post.body|safe|linebreaks}}</font>
+</center>
+{% endblock %}
